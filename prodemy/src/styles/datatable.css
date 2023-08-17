@@ -1,0 +1,24 @@
+/* Remove focus outline */
+.MuiDataGrid-root .MuiDataGrid-cell:focus,
+.MuiDataGrid-withBorderColor:focus,
+.MuiDataGrid-root .MuiDataGrid-row:focus {
+  outline: none;
+}
+.MuiDataGrid-cell{
+  max-height: 100px !important;
+}
+.MuiDataGrid-row{
+  min-height: 80px !important;
+}
+.MuiDataGrid-root {
+  height: 511px !important;
+}
+.disable-selection {
+  pointer-events: none;
+}
+.MuiDataGrid-columnHeaders  {
+  background-color: #F4F6F8; /* Replace with your desired background color */
+}
+.MuiDataGrid-columnHeaderTitle{
+ color: #637381;
+}

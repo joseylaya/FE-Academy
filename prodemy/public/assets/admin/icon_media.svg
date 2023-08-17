@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="75pt" height="75pt" viewBox="0 0 75 75">
+ <defs>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="54.472" y2="0" gradientTransform="translate(19.737 60.87) rotate(-48.2013) skewX(9.3132)">
+   <stop offset="0" stop-color="#ffb300"/>
+   <stop offset="1" stop-color="#fe8c00"/>
+  </linearGradient>
+ </defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -75)">
+   <g id="Your Design Here">
+    <g id="Group" stroke="#4c4c4c" stroke-linecap="round" stroke-width="1.65" stroke-miterlimit="79.8403193612775">
+     <path d="M 65.112,41.601 L 17.805,68.905 C 13.883,71.166 10.702,69.33 10.702,64.805 L 10.702,10.195 C 10.702,5.67 13.883,3.834 17.805,6.097 L 65.112,33.403 C 69.035,35.664 69.035,39.338 65.112,41.601 Z" stroke="none" stroke-linejoin="miter" marker-start="none" marker-end="none" fill="url(#LinearGradient)"/>
+     <path d="M 49.588,48.874 L 49.222,49.085" fill="none" stroke-linejoin="round"/>
+     <path d="M 43.564,52.349 L 32.314,58.842" fill="none" stroke-linejoin="round"/>
+     <path d="M 27.257,61.76 L 14.875,68.905 C 10.953,71.166 7.772,69.33 7.772,64.805 L 7.772,10.195 C 7.772,5.67 10.953,3.834 14.875,6.097 L 62.182,33.403 C 66.104,35.664 66.104,39.338 62.182,41.601 L 55.32,45.562" fill="none" stroke-linejoin="round"/>
+    </g>
+   </g>
+   <g id="MouseOff"/>
+  </g>
+ </g>
+</svg>

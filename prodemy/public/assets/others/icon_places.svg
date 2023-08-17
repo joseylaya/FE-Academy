@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="75pt" height="75pt" viewBox="0 0 75 75">
+ <defs>
+  <image id="Bitmap" preserveAspectRatio="none" width="1" height="1" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAEsCAYAAAA2KRjJAAAACXBIWXMAAC4jAAAuIwF4pT92AAABGElEQVR4nO3dMUrEQBQG4JltTGqvYLWVhxCrEEmRwk6sPdF6ASGlKbT0CtaWHmCLJSAJxtmw7AXcEYvvh5n3pnkfvAtMDIe0bVsOw3AXY1yHXybN+ErlOeVtee+vpmnOx3H8TG0RTpunvu9vF6SqqtdUrkOeXK0OzWUmYL+6m1XIn7O/QAIEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCOS/IR+5gHme3xdkmqb7VL4zGNuyLB+PP7LWdX2R1E0661NMjzG+FEXx0HXdLuRPCD+OdCyoMXRYiwAAAABJRU5ErkJggg==">
+   <title>1</title>
+  </image>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="28.53" y2="0" gradientTransform="translate(20.413 39.89) rotate(-18.1911) skewX(61.2138)">
+   <stop offset="0" stop-color="#ffb300"/>
+   <stop offset="1" stop-color="#fe8c00"/>
+  </linearGradient>
+  <linearGradient id="LinearGradient_1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="28.53" y2="0" gradientTransform="translate(28.931 63.682) rotate(-18.1911) skewX(61.2138)">
+   <stop offset="0" stop-color="#ffb300"/>
+   <stop offset="1" stop-color="#fe8c00"/>
+  </linearGradient>
+  <image id="Bitmap_1" preserveAspectRatio="none" width="1" height="1" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAC4jAAAuIwF4pT92AAAAjElEQVQokWNkgAJvb28XRkbGTiBTmoE08PXfv3/t27Ztmwtk/wcb6Ovrm/v///9JDBQAoGNWb968OYzRwcGBg4eH5zsDFcCfP38Umbi4uAQYqASYmZnVmYBefU8tA5mYmK4zbd++/SfQ/3FUMG8+MAwfIceyMdDgeiBTkUSDXgF9OXXr1q3rGRgY/gMAdWItQzC5XtgAAAAASUVORK5CYII=">
+   <title>2</title>
+  </image>
+  <image id="Bitmap_2" preserveAspectRatio="none" width="1" height="1" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHCAYAAADXhRcnAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAlklEQVQYlWNkgAIvLy9zJiamfiBTiQE3+MzIyNi6efPmhUD2f7BmX1/f4P///69hIB6s2LJlSyRjQ0MD05kzZ34DBZhI0MzAzMwsx3Tu3DluUjWCANClckxGRkZfgexfpGr+9+/fA5ifPYEmbSNWIzBgZ2zatCkTHtre3t6aQMFGoCHqDDi8AQzp10D5fmBgbWZgYGAAADCONAUZ/od1AAAAAElFTkSuQmCC">
+   <title>3</title>
+  </image>
+  <image id="Bitmap_3" preserveAspectRatio="none" width="1" height="1" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAABCCAYAAADgz8yFAAAACXBIWXMAAC4jAAAuIwF4pT92AAAD8ElEQVR4nO3dT2jTYBjH8edNirO1iogiOFA86EEEBfE+UIajyUChOBnTwxS96MWjMBl48epNHYIgszuuSbqb9OxJJ7ghgsyjFz2U1glNfd4xQcGlTdv3T+D3gazpGpJ1fHn7ZoxEECuXy7uazeacEGKGn44QKBHH8Xoul7tXrVZXyWKlUukit/CYV0eHtMsPjuPcN/m+BUfutlqtNV4/QaBFu92+sLKy8oYs5Pv+3U6n80TR7qfCMFwiAxyO/DIhcq1c113mB0GWGRsb260wcqnied5VMsDhN3aWQLciR2XdFLFQKOzXcJgKT42mSDOHwIQf9Xp9kyzDg953Hcfh+f9r3bEjdAP4pPQSP3TIMnzesMkRXtdxLN2xCz7YIz7og/+8FvPymZdfBMMQ84i56jjOXBAEX8hi3MQ5buIhrx4fcFdHedmXtAH/Tq5FUVQhxZJC/8ZnyIcJoE++7xc45I+8eixpOx2xY+oCyvAnV5MH0VO8upG0nY5pDEIHpWyJHaGDcjbEjtBBC9OxI3TQxmTsCB20MhU7QgftTMSO0MEI3bEjdDAmTeye500PciyEDkb1Gjt75fv+bL/HQehg3F+xJ/4PUKfTWeg3doQOVtiO/TSvfkrart/YETpYQ8beaDTOkILYETpYpV6v/1QRO0IH66iIHaGDlYYdO0IHaw0zdoQOVksZ+82dXkfoYL0UsT/fKXaEDpkwaOwIHTJjkNgROmRKv7EjdMicNLF7nrd1QSaEDpnUa+zsJcc+itAhs1KM7FcQOmRaPp/veg1Lx3EEQofMmpiYGHFdV95F42TSdu12exmhQyb1GrkQ4k6tVttA6JA58s4cvUYeBMFTuY7QIVNk5MVi8T11iZzn5bf/RL71nAAyIk3k1Wr12T/fI4AMGCRyKUcAliuXy/lWq/WO+oxcQuhgNXnXDI68610zkiKXEDpYq9dbwwghbnHkC0nbYI4OVkoTeRAEC932hxEdrJPiJl+zYRi+6GWfCB2skmIkn+bIF3vdL6YuYI00kfN0ZTHNvhE6WEFl5BJCB+NURy4hdDBKR+QSTkbBmDS3UOcTz4FuoY4RHYxIE3kURZVBj4fQQTvdkUsIHbQyEbmE0EGb8fHxPSYil3AyClpMTk7ujeN4nVePdNl0iiNfoiHDiA7KpYk8DMOhRy4hdFDKhsglhA7K2BK5lDRHP+h53lshRIMA+sCRy8vFHUjahk88PZ6TR6RYUuhytD/PPwgBqKArcglTFzBCZ+QSQgftdEcu5XgOvkYA+pS48Rpp5jQaDXm2+5UA1CuFYag9cknIL9tXQZrn0X2GP1YwnYFhkS0d4kX+9e5GEATrZATRb1FIU37RoYCyAAAAAElFTkSuQmCC">
+   <title>4</title>
+  </image>
+  <image id="Bitmap_4" preserveAspectRatio="none" width="1" height="1" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAABDCAYAAAArkx8gAAAACXBIWXMAAC4jAAAuIwF4pT92AAADkElEQVR4nO3dP2vUYBzA8efSehS9ooiVioOI4KTT1Q5StEWpcpfDvobiIDiKexc38Q04iKuIheau1aX+gU7qYLG+Ahd10UVKhsTfU2qh9s+TXJMnT+L3AyFX+jTX4XtPk/QuqakCNZvNQ6Ojo3drtdot+XJAAdmJpKsVWT8IguB3YaFPT08fqdfra/LwjALysx6G4YlCZlEih0WDAwMDR62HTuSwLY7jhqcsInIUxVroRI4iDdp4khSR/5AlUkB/RtQek3fuoSeNXPajHvZ6vfsK6JPv+99kdXK37+W660LkcEVuoRM5XJJL6EQO12QeOpHDRZkejHY6ncMSMJHDOZnN6JuRf1HmU4iPiBy2ZRJ6msi73e49BVh24NCJHGVwoNCJHGXRd+ibkX9WRI4S6Cv0ycnJIVmtynLWMJTI4YTUoevIG43GJ5nNzxmGEjmckSr0v5HLw/OGoUQOpyQOnchRZolCJ3KUnTF0IkcV7Bt6isgfEzlctmfoKSJ/MjY2dkcBDts19JSR356bm+NznnDajtCJHFW0LXQiR1VthU7kqLKN0IkcVbcR+vDw8KIyRF6r1Z4SOcrKm5mZORbH8dR+g3TkzWZzlshRVl4YhkMJxs0TOcrMGx8f/y7rn/sNkhn/me/7HQWUlKdnatk1mTCMq8vyvC0UUEIbB6NBEKzJrD1mGFuXF8QLYkcZbZ1H7/V6H4kdVbXtP6PEjqra8V4XYkcV7fruRR2753mXDD9L7CiNPd+PvrCw8IHYURX7fsIoZezXFeAo42dGU8Q+32q1rijAQYmuAqBjl5DHDcMa8oLodTqdCQU4JvF1XYIgeJ8k9jiOl4gdrkl1pS5iR1mlvvYisaOM+rqaro5d9sdNEW/E3m63LyugYH1fH10OUFeiKLpqGNaQ2f8VsaNoB7rjxeLi4jtiRxkc+B5GxI4yyOSudMQO12V2n1Edu4Q8aRhG7ChEprdID4LgLbHDRV7WGyR2uMjLY6PEDtd4eW1Yxy6rKcMwHXvQarUuKiBHXp4b73a7b5Q59uOe5y0TO/JUs/Ekvu/r3ZjXhmHrsvxSQP9G1C6Tt76Nv5XQtYSxA5nToXvKkoS7MUAurIWu6djl4POaAiyzGroWBMGy/Cm5qQBLZHJdtbaP/q92u31DfoGXCshXFIbhqcJC1yT2C5uxn1acdUHGZM9hNYqi2aWlpa/KBfoeSsrSqU78j5T6A8vbphP1HLZGAAAAAElFTkSuQmCC">
+   <title>5</title>
+  </image>
+ </defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -75)">
+   <g id="Your Design Here">
+    <g id="Group" stroke-linejoin="miter" stroke-linecap="round" stroke="none">
+     <use transform="translate(33.6 73.44) scale(6 -72)" xlink:href="#Bitmap" stroke-width="0" fill="none" stroke-miterlimit="79.8403193612775"/>
+     <path d="M 20.768,27.664 L 20.768,27.665 L 13.668,34.765 L 20.768,41.865 L 56.484,41.865 L 56.484,27.664 L 20.768,27.664 Z" stroke-width="1.65" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient)"/>
+     <path d="M 57.902,51.456 L 57.902,51.457 L 65.002,58.557 L 57.902,65.657 L 22.186,65.657 L 22.186,51.456 L 57.902,51.456 Z" stroke-width="1.65" marker-start="none" marker-end="none" stroke-miterlimit="79.8403193612775" fill="url(#LinearGradient_1)"/>
+     <use transform="translate(47.28 66.48) scale(4.8 -1.68)" xlink:href="#Bitmap_1" stroke-width="0" fill="none" stroke-miterlimit="79.8403193612775"/>
+     <use transform="translate(42.48 66.48) scale(3.6 -1.68)" xlink:href="#Bitmap_2" stroke-width="0" fill="none" stroke-miterlimit="79.8403193612775"/>
+     <use transform="translate(18.72 66.48) scale(44.64 -15.84)" xlink:href="#Bitmap_3" stroke-width="0" fill="none" stroke-miterlimit="79.8403193612775"/>
+     <use transform="translate(9.84 42.72) scale(44.64 -16.08)" xlink:href="#Bitmap_4" stroke-width="0" fill="none" stroke-miterlimit="79.8403193612775"/>
+    </g>
+   </g>
+   <g id="MouseOff"/>
+  </g>
+ </g>
+</svg>

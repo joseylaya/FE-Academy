@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="75pt" height="75pt" viewBox="0 0 75 75">
+ <defs>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="54.28" y2="0" gradientTransform="translate(20.857 60.092) rotate(-51.3288) skewX(3.2482)">
+   <stop offset="0" stop-color="#ffb300"/>
+   <stop offset="1" stop-color="#fe8c00"/>
+  </linearGradient>
+ </defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -75)">
+   <g id="Your Design Here">
+    <g id="Group" stroke-linecap="round" stroke-width="1.65" stroke-miterlimit="79.8403193612775">
+     <path d="M 12.416,3.386 L 12.416,69.487 L 51.023,69.487 L 51.023,56.792 L 61.101,56.792 L 51.023,69.487 L 52.087,69.487 L 65.994,51.807 L 65.994,3.386 C 65.994,2.578 65.338,1.92 64.53,1.92 L 13.879,1.92 C 13.071,1.92 12.416,2.578 12.416,3.386 Z" stroke="none" stroke-linejoin="miter" marker-start="none" marker-end="none" fill="url(#LinearGradient)"/>
+     <path d="M 64.474,47.115 L 64.474,53.112" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 64.474,39.851 L 64.474,42.092" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 23.933,28.104 L 54.452,28.104" fill="none" stroke="#ffffff" stroke-linejoin="round"/>
+     <path d="M 23.933,17.217 L 54.452,17.217" fill="none" stroke="#ffffff" stroke-linejoin="round"/>
+     <path d="M 22.027,29.706 L 52.546,29.706" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 22.027,18.819 L 52.546,18.819" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 64.435,53.51 L 49.551,72.256 L 11.333,72.256 C 10.505,72.256 9.832,71.582 9.832,70.754 L 9.832,4.518 C 9.832,3.689 10.505,3.016 11.333,3.016 L 63.236,3.016 C 64.065,3.016 64.737,3.689 64.737,4.518 L 64.737,15.861 L 64.737,30.564" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 49.551,72.256 L 49.551,54.49 L 63.682,54.459" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+    </g>
+   </g>
+   <g id="MouseOff"/>
+  </g>
+ </g>
+</svg>

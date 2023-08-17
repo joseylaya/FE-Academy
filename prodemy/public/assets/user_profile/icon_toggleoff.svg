@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="75pt" height="75pt" viewBox="0 0 75 75">
+ <defs>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="50.991" y2="0" gradientTransform="translate(15.582 52.525) rotate(-30.7975) skewX(40.4593)">
+   <stop offset="0" stop-color="#ffb300"/>
+   <stop offset="1" stop-color="#fe8c00"/>
+  </linearGradient>
+ </defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -75)">
+   <g id="Your Design Here">
+    <g id="Group" stroke-width="1.125" stroke-miterlimit="79.8403193612775">
+     <path d="M 4.682,37.499 C 4.682,48.987 14.007,58.313 25.494,58.313 L 53.059,58.313 C 64.547,58.313 73.872,48.987 73.872,37.499 C 73.872,26.01 64.547,16.687 53.059,16.687 L 25.494,16.687 C 14.007,16.687 4.682,26.01 4.682,37.499 Z" stroke="none" stroke-linejoin="miter" stroke-linecap="round" marker-start="none" marker-end="none" fill="url(#LinearGradient)"/>
+     <path d="M 16.641,28.456 C 11.651,33.447 11.651,41.547 16.641,46.54 C 21.633,51.53 29.735,51.53 34.726,46.54 C 39.717,41.547 39.717,33.447 34.726,28.456 C 29.735,23.465 21.633,23.465 16.641,28.456 Z" stroke="none" fill="#ffffff" fill-rule="evenodd" marker-start="none" marker-end="none"/>
+     <g id="Group_1" stroke-linejoin="round" stroke-linecap="round" stroke="#4c4c4c">
+      <path d="M 13.352,45.79 C 17.928,50.366 25.358,50.366 29.934,45.79 C 34.51,41.214 34.51,33.784 29.934,29.208 C 25.358,24.632 17.928,24.632 13.352,29.208 C 8.776,33.784 8.776,41.214 13.352,45.79 Z" marker-start="none" marker-end="none"/>
+      <path d="M 45.363,57.256 L 37.748,57.256" fill="none"/>
+      <path d="M 30.873,57.256 L 27.288,57.256" fill="none"/>
+      <path d="M 21.444,57.256 C 10.541,57.256 1.69,48.405 1.69,37.502 L 1.69,37.501 C 1.69,26.598 10.541,17.747 21.444,17.747 L 50.509,17.747 C 61.412,17.747 70.263,26.598 70.263,37.501 L 70.263,37.502 C 70.263,48.405 61.412,57.256 50.509,57.256" fill="none"/>
+     </g>
+    </g>
+   </g>
+   <g id="MouseOff"/>
+  </g>
+ </g>
+</svg>

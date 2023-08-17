@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="75pt" height="75pt" viewBox="0 0 75 75">
+ <defs>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="54.559" y2="0" gradientTransform="translate(22.677 63.2) rotate(-54.9348) skewX(-3.97766)">
+   <stop offset="0" stop-color="#ffb300"/>
+   <stop offset="1" stop-color="#fe8c00"/>
+  </linearGradient>
+ </defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -75)">
+   <g id="Your Design Here">
+    <g id="Group" stroke-linecap="round" stroke-width="1.125" stroke-miterlimit="79.8403193612775">
+     <path d="M 14.877,48.342 C 14.877,62.008 25.967,73.1 39.634,73.1 C 53.301,73.1 64.391,62.008 64.391,48.342 C 64.391,34.676 45.415,7.684 39.634,1.901 C 33.672,7.598 14.877,34.676 14.877,48.342 Z M 45.804,42.019 C 49.208,45.421 49.208,50.951 45.804,54.357 C 42.401,57.761 36.87,57.761 33.466,54.357 C 30.062,50.951 30.062,45.421 33.466,42.019 C 36.87,38.614 42.401,38.614 45.804,42.019 Z" stroke="none" stroke-linejoin="miter" marker-start="none" marker-end="none" fill="url(#LinearGradient)"/>
+     <path d="M 51.912,67.244 C 52.646,66.623 53.342,65.959 53.999,65.259" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 57.583,60.343 C 59.561,56.786 60.685,52.694 60.685,48.34 C 60.685,34.675 41.709,7.682 35.928,1.9 C 29.966,7.597 11.171,34.675 11.171,48.34 C 11.171,62.006 22.262,73.099 35.928,73.099 C 39.92,73.099 43.694,72.151 47.035,70.47" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 29.759,54.353 C 33.164,57.757 38.692,57.757 42.097,54.353 C 45.501,50.948 45.501,45.42 42.097,42.015 C 38.692,38.611 33.164,38.611 29.759,42.015 C 26.355,45.42 26.355,50.948 29.759,54.353 Z" stroke="#4c4c4c" stroke-linejoin="round" marker-start="none" marker-end="none"/>
+    </g>
+   </g>
+   <g id="MouseOff"/>
+  </g>
+ </g>
+</svg>

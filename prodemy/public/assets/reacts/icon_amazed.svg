@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="75pt" height="75pt" viewBox="0 0 75 75">
+ <defs>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="29.649" y2="-39.297" gradientTransform="translate(22.734 60.114)">
+   <stop offset="0" stop-color="#ffb300"/>
+   <stop offset="1" stop-color="#fe8c00"/>
+  </linearGradient>
+ </defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -75)">
+   <g id="Your Design Here">
+    <g id="Group" stroke-linecap="round" stroke-width="1.125" stroke-miterlimit="79.8403193612775">
+     <path d="M 15.356,45.408 C 15.354,58.331 25.851,68.827 38.772,68.825 C 51.699,68.825 62.193,58.331 62.191,45.406 C 62.193,32.484 38.775,6.173 38.775,6.173 C 38.775,6.173 15.356,32.483 15.356,45.408 Z" stroke="none" stroke-linejoin="miter" marker-start="none" marker-end="none" fill="url(#LinearGradient)"/>
+     <path d="M 13.371,45.41 C 13.37,58.332 23.866,68.829 36.787,68.826 C 49.714,68.826 60.208,58.332 60.207,45.407 C 60.207,28.735 36.79,6.174 36.79,6.174 C 36.79,6.174 13.371,28.352 13.371,45.41 Z" stroke="#4c4c4c" stroke-linejoin="round" marker-start="none" marker-end="none"/>
+     <g id="Group_1" stroke-linejoin="round" stroke="#4c4c4c" fill="#4c4c4c">
+      <path d="M 35.829,41.335 C 38.687,42.063 41.43,39.402 41.95,35.396 C 42.47,31.39 40.572,27.546 37.713,26.817 C 34.855,26.089 32.112,28.75 31.592,32.756 C 31.072,36.762 32.97,40.606 35.829,41.335 Z" marker-start="none" marker-end="none"/>
+      <path d="M 26.39,52.231 C 27.454,52.502 28.448,51.251 28.607,49.438 C 28.766,47.626 28.031,45.933 26.966,45.661 C 25.902,45.39 24.908,46.641 24.749,48.454 C 24.59,50.266 25.325,51.959 26.39,52.231 Z" marker-start="none" marker-end="none"/>
+      <path d="M 46.452,52.231 C 47.516,52.502 48.51,51.251 48.669,49.438 C 48.828,47.626 48.093,45.933 47.028,45.661 C 45.964,45.39 44.97,46.641 44.811,48.454 C 44.652,50.266 45.387,51.959 46.452,52.231 Z" marker-start="none" marker-end="none"/>
+      <path d="M 24.013,57.823 C 25.816,59.981 29.075,59.77 30.763,57.823" fill="none"/>
+      <path d="M 42.816,57.823 C 44.62,59.981 47.878,59.77 49.565,57.823" fill="none"/>
+     </g>
+    </g>
+   </g>
+   <g id="MouseOff"/>
+  </g>
+ </g>
+</svg>

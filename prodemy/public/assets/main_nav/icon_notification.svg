@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="75pt" height="75pt" viewBox="0 0 75 75">
+ <defs>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="54.076" y2="0" gradientTransform="translate(16.56 57.831) rotate(-37.2801) skewX(29.2903)">
+   <stop offset="0" stop-color="#ffb300"/>
+   <stop offset="1" stop-color="#fe8c00"/>
+  </linearGradient>
+ </defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -75)">
+   <g id="Your Design Here">
+    <g id="Group" stroke-linecap="round" stroke-width="1.125" stroke-miterlimit="79.8403193612775">
+     <path d="M 33.612,7.062 C 32.167,8.511 31.443,10.408 31.443,12.309 L 46.27,12.309 C 46.27,10.408 45.546,8.511 44.099,7.062 C 41.207,4.172 36.506,4.172 33.612,7.062 Z" stroke="none" fill="#ffb300" stroke-linejoin="round" marker-start="none" marker-end="none"/>
+     <path d="M 5.853,12.87 L 8.587,19.992 L 14.306,20.044 L 14.306,39.897 C 14.306,53.804 25.595,65.093 39.505,65.093 C 53.413,65.093 64.703,53.804 64.703,39.897 L 64.703,20.044 L 71.048,19.992 L 73.822,12.87 L 5.853,12.87 Z" stroke="none" stroke-linejoin="miter" marker-start="none" marker-end="none" fill="url(#LinearGradient)"/>
+     <path d="M 10.528,19.48 L 10.528,39.334 C 10.528,53.24 21.814,64.531 35.723,64.531 L 35.726,64.531 C 49.635,64.531 60.923,53.24 60.923,39.334 L 60.923,19.48" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 34.808,19.428 L 36.833,19.428" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 43.712,19.428 L 49.025,19.428" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 55.886,19.428 L 66.937,19.428 L 69.711,12.307 L 1.741,12.307 L 4.476,19.428 L 28.162,19.428" fill="none" stroke="#4c4c4c" stroke-linejoin="round"/>
+     <path d="M 31.384,68.31 C 33.778,70.706 37.67,70.706 40.07,68.31 C 41.315,67.062 41.913,65.411 41.861,63.775 C 39.898,64.267 37.841,64.531 35.726,64.531 L 35.723,64.531 C 33.61,64.531 31.552,64.267 29.589,63.775 C 29.536,65.411 30.135,67.062 31.384,68.31 Z" stroke="#4c4c4c" stroke-linejoin="round" marker-start="none" marker-end="none"/>
+     <path d="M 30.483,7.061 C 29.034,8.51 28.311,10.406 28.311,12.307 L 43.138,12.307 C 43.138,10.406 42.415,8.51 40.969,7.061 C 38.075,4.171 33.377,4.171 30.483,7.061 Z" stroke="#4c4c4c" stroke-linejoin="round" marker-start="none" marker-end="none"/>
+    </g>
+   </g>
+   <g id="MouseOff"/>
+  </g>
+ </g>
+</svg>

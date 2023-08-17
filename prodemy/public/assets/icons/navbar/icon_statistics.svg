@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.1.0.18-->
+<svg stroke-width="0.501" stroke-linejoin="bevel" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="75pt" height="75pt" viewBox="0 0 75 75">
+ <defs>
+	</defs>
+ <g id="Document" fill="none" stroke="black" font-family="Times New Roman" font-size="16" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -75)">
+   <g id="Your Design Here">
+    <g id="Group" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.65" stroke-miterlimit="79.8403193612775">
+     <path d="M 15.143,32.487 L 15.143,6.664 L 22.285,6.664 L 22.285,32.487 L 15.143,32.487 Z" stroke="none" fill="#fd6e00" marker-start="none" marker-end="none"/>
+     <path d="M 30.364,43.011 L 30.364,7.327 L 37.506,7.327 L 37.506,43.011 L 30.364,43.011 Z" stroke="none" fill="#fd6e00" marker-start="none" marker-end="none"/>
+     <path d="M 45.585,35.888 L 45.585,6.664 L 52.727,6.664 L 52.727,35.888 L 45.585,35.888 Z" stroke="none" fill="#ffb300" marker-start="none" marker-end="none"/>
+     <path d="M 60.806,54.18 L 60.806,7.694 L 67.948,7.694 L 67.948,54.18 L 60.806,54.18 Z" stroke="none" fill="#fd6e00" marker-start="none" marker-end="none"/>
+     <path d="M 2.14,56.012 L 2.14,6.668 L 72.861,6.668" fill="none" stroke="#4c4c4c"/>
+     <path d="M 12.84,32.487 L 12.84,6.664 L 19.982,6.664 L 19.982,32.487 L 12.84,32.487 Z" stroke="#4c4c4c" marker-start="none" marker-end="none"/>
+     <path d="M 28.061,43.011 L 28.061,7.327 L 35.203,7.327 L 35.203,43.011 L 28.061,43.011 Z" stroke="#4c4c4c" marker-start="none" marker-end="none"/>
+     <path d="M 43.282,35.888 L 43.282,6.664 L 50.424,6.664 L 50.424,35.888 L 43.282,35.888 Z" stroke="#4c4c4c" marker-start="none" marker-end="none"/>
+     <path d="M 58.503,54.18 L 58.503,7.694 L 65.645,7.694 L 65.645,54.18 L 58.503,54.18 Z" stroke="#4c4c4c" marker-start="none" marker-end="none"/>
+     <path d="M 7.92,39.394 L 14.53,44.173" fill="none" stroke="#4c4c4c"/>
+     <path d="M 18.314,46.908 L 22.976,50.278" fill="none" stroke="#4c4c4c"/>
+     <path d="M 26.849,53.079 L 34.308,58.471 L 46.91,51.602 L 63.283,68.337 L 55.849,68.06 L 63.283,68.337 L 63.908,62.294" fill="none" stroke="#4c4c4c"/>
+    </g>
+   </g>
+   <g id="MouseOff"/>
+  </g>
+ </g>
+</svg>

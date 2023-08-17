@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+  font-family: arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Menu {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: lightseagreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Menu input {
+  width: 300px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.questions button , .Menu button, .res, #nextQuestion{
+  /* background-image: linear-gradient(to right, #f45d2eb0 , #f45d2eb0); */
+
+  width: 200px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 4px 4px 4px #20202059;
+}
+#nextQuestion:hover{
+  box-shadow: unset
+}
+
+.questions button{
+  margin: 30px;
+  border: 1px solid white;
+}
+
+.questions button:focus{
+  background-image: linear-gradient(to right, #f45d2eb0 , #f45d2eb0);
+}
+button:hover {
+  cursor: pointer;
+}
+
+.Quiz {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  /* background-image: linear-gradient(to right, #a149adba , #a149adba); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Menu, .Quiz, .EndScreen h1 {
+  color: white;
+}
+
+.EndScreen {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: lightseagreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#nextQuestion {
+  width: 150px;
+  border: 1px solid white;
+  margin-top: 60px;
+  background-image: linear-gradient(to right, #006e18b0 , #006e18b0);
+}
+
+.h3Classname {
+  color: #ffffff;
+
+}
