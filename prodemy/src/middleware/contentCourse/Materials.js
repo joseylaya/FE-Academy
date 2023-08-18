@@ -20,6 +20,9 @@ const Materials = () => {
   const [isQuiz, setIsQuiz] = useState(false);
   const [getNextMod, setGetNextMod] = useState([]);
   const [increment, setIncrement] = useState(1);
+  const [isModule, setIsModule] = useState('');
+  const [moduleDesc, setModuleDesc] = useState('');
+  
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   
   const { id } = useParams();
@@ -75,7 +78,6 @@ const Materials = () => {
           setTimeout(checkForVideoElement, 1000); // Retry after 1 second
         }
       } catch (error) {
-        console.log(error);
         setTimeout(checkForVideoElement, 1000); // Retry after 1 second
       }
     };
@@ -119,9 +121,11 @@ const Materials = () => {
           setGetNextMod(content)
            // Fetch and store data for all modules
           const decodedData = JSON.parse(content[0].content);
-          const decodedLessonAbout = decodedData.lessonAbout;
+          const decodedLessonAbout = decodedData;
 
-          setContentData(decodedLessonAbout);
+          setIsModule(decodedLessonAbout.module)
+          setModuleDesc(decodedLessonAbout.moduleDesc)
+          setContentData(decodedLessonAbout.lessonAbout);
       
           setModuleIsData(content[0])
           
@@ -144,9 +148,9 @@ const Materials = () => {
   
       const decodedData = JSON.parse(getNextMod[increment].content);
   
-      const decodedLessonAbout = decodedData.lessonAbout;
-  
-      setContentData(decodedLessonAbout);
+      const decodedLessonAbout = decodedData;
+      setIsModule(decodedLessonAbout.module)
+      setContentData(decodedLessonAbout.lessonAbout);
       setCurrentTab(0);
       setSelectedLesson(0);
       setIsQuiz(false);
@@ -183,8 +187,9 @@ const Materials = () => {
         }
         return newChecked;
       });
-      setIsQuiz(true)
+        setIsQuiz(true)
         setCurrentTab(100)
+        videoTimeElement()
     }
   };
 
@@ -219,13 +224,13 @@ const Materials = () => {
           </Typography>
           <Box className="rate" sx={{ mb: 2 }}>
             <Typography component="label" htmlFor="" sx={{ margin: '0px 5px', color: '#00000085' }}>
-             {moduleIsData.moduleName}
+             {isModule}
             </Typography>
             <Typography component="label" htmlFor="">
               |
             </Typography>
             <Typography component="label" htmlFor="" sx={{ margin: '0px 10px', color: '#00000085' }}>
-            {moduleIsData.description}
+            {moduleDesc}
             </Typography>
           </Box>
           <Grid container spacing={3}>
@@ -244,16 +249,11 @@ const Materials = () => {
                   </Typography>
 
                   <Typography variant="h5" component="h4" sx={{ justifyContent: 'center', display: 'flex' }}>
-                  {moduleIsData.moduleName}
+                  {isModule}
                   </Typography>
 
                   <List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     <Box>
-                      <ListItem>
-                        <ListItemText id={`checkbox-list-secondary-label`} variant="h5" component="h4">
-                          <ListItemText primary={`I. ${moduleIsData.moduleName}`} variant="h5" component="h4" />
-                        </ListItemText>
-                      </ListItem>
 
                       {contentData.map((lesson, lessonIndex) => (
                         <ListItem key={`lesson-${lessonIndex}`} disablePadding disabled={currentTab !== lessonIndex}
