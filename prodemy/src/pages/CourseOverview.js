@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import Axios from 'axios';
 // @mui
 import {
      Card,
@@ -36,15 +37,16 @@ export default function CourseOverview() {
      const storedUserId = sessionStorage.getItem('userId');
      const [courseData, setCourseData] = useState('');
      const [skills, setSkills] = useState('');
-     const [takenCourse, setTakenCourse] = useState('');
+     const [takenCourse, setTakenCourse] = useState(0);
      const [isSticky, setIsSticky] = useState(false);
 
      const [transcriptEdit, setTranscriptEdit] = useState(false);
      const [isAddModule, setIsAddModule] = useState(false);
      const [isAddExam, setIsAddExam] = useState(false);
+     const [isRole, setIsRole] = useState(1);
      
      const [showText, setShowText] = useState(false);
-     
+
 
      useEffect(() => {
        const fetchData = async () => {
@@ -54,20 +56,22 @@ export default function CourseOverview() {
                try {
                     const response = await fetch(`http://localhost:8000/user/${storedUserId}`); // Replace "/api/data/${id}" with your actual API endpoint
                     const data2 = await response.json();
-              
-                    const currentCourseId = data2[0].current_course_id;
-                    if (Number(currentCourseId) === Number(id)) {
-                         setTakenCourse(true)
-                    }else(
-                         setTakenCourse(false)
-                    )
+                    setIsRole(data2[0].Role)
+                    const idey = data2[0].current_course_id;
+                    // if (Number(currentCourseId) !== 0 || Number(currentCourseId) === Number(id)) {
+                         const currentCourseId = idey.toString();
+                         setTakenCourse(currentCourseId);
+                    //  } else {
+                    //      setTakenCourse(false);
+                    //  }
+                     
                     // console.log(takenCourse)
                } catch (error) {
                     console.error(error);
                }
            const skill = data.modules[0].skillsToLearn.split(',');
            setSkills(skill)
-          
+ 
            setCourseData(data.modules[0]);
 
          } catch (error) {
@@ -119,9 +123,31 @@ export default function CourseOverview() {
           setTranscriptEdit(false);
      }
 
-     // const toggleText = () => {
-     //      setShowText(!showText);
-     // };
+     const handleAddTakeCourse = (event, id, storedUserId) => {
+          console.log('this is id from course' , id )
+          console.log('this is id from userdata' , storedUserId )
+
+             if(storedUserId.length > 0 ){
+               Axios
+               .post('http://localhost:8000/addTakenCourse ', {
+                 idey: id,
+                 userId: storedUserId
+               })
+               
+               .then((response) => {
+                    if(response){
+                         navigate(`/dashboard/content/${id}`)
+                    }
+               })
+         
+               .catch((error) => {
+                 console.error(error);
+                 // Handle the error
+               });
+             }
+
+
+     }
 
      const cardStyle = {
           position: isSticky ? 'fixed' : 'static',
@@ -144,6 +170,7 @@ export default function CourseOverview() {
           setIsAddModule(false);
           setIsAddExam(false);
      };
+     
 
      return (
           <>
@@ -178,45 +205,66 @@ export default function CourseOverview() {
                          </Box>
 
                          <Box sx={{ margin: '50px 0px'}}>
-                              {
-                              takenCourse === true ?  <Button variant="contained" startIcon={<Iconify icon="line-md:confirm" />} onClick={(event) => handleClick(event, id)}>
-                                   resume
-                              </Button> : <Button variant="contained" startIcon={<Iconify icon="line-md:confirm" />} onClick={(event) => handleClick(event, id)} disabled={'true'}>
-                                   Get Started
-                              </Button>
-                              }
+                         {
+                              takenCourse === id ? (
+                                   <Button variant="contained" startIcon={<Iconify icon="line-md:confirm" />} onClick={(event) => handleClick(event, id)}>
+                                        Resume
+                                   </Button>
+                              ) : takenCourse === '0' ? (
+                                   <Button variant="contained" startIcon={<Iconify icon="line-md:confirm" />} label = "additional-row taken-course-tbl" onClick={(event) => handleAddTakeCourse(event, id, storedUserId)} >
+                                        Get Started
+                                   </Button>
+                              ) : (
+                                   <Button variant="contained" startIcon={<Iconify icon="line-md:confirm" />} label = "update-row taken-course-tbl" onClick={(event) => handleClick(event, id)} disabled={'true'}>
+                                        Get Started
+                                   </Button>
+                              )
+                           }
                               &nbsp;
-                              {transcriptEdit ?
-                                   <Button variant="contained" onClick={goBack}>
+                              {isRole === 1 ? (
+                                     <Typography variant="h5" sx={{ fontWeight: 'bold' }}/>
+                                   ) : (
+                                  <>
+                                   &nbsp;
+                                   {transcriptEdit ?
+                                        <Button variant="contained" onClick={goBack}>
+                                             Done
+                                        </Button>
+                                                  :
+                                        <Button  variant="contained" startIcon={<Iconify icon="line-md:pencil" />} onClick={(event) => handleClickEdit(event, id)}>
+                                             Update Module
+                                        </Button>
+                                   }
+                                    &nbsp;
+                                   {isAddModule ? (
+                                        <Button variant="contained" onClick={goBack}>
                                         Done
-                                   </Button>
-                                             :
-                                   <Button  variant="contained" startIcon={<Iconify icon="line-md:pencil" />} onClick={(event) => handleClickEdit(event, id)}>
-                                        Update Module
-                                   </Button>
-                              }
-                              &nbsp;
-
-                              {isAddModule ?
-                              <Button variant="contained" onClick={goBack}>
-                                   Done
-                              </Button>
-                                   :
-                               <Button  variant="contained" startIcon={<Iconify icon="line-md:plus" />} onClick={(event) => handleClickAdd(event, id)}>
-                                    Add Module
-                               </Button>
-                               }
-                               &nbsp;
-
-                              {isAddExam ?
-                              <Button variant="contained" onClick={goBack}>
-                                   Done
-                              </Button>
-                                   :
-                               <Button variant="contained" startIcon={<Iconify icon="line-md:plus" />} onClick={(event) => handleClickAddExam(event, id)}>
-                                   Add Exam
-                              </Button>
-                              }
+                                        </Button>
+                                   ) : (
+                                        <Button
+                                        variant="contained"
+                                        startIcon={<Iconify icon="line-md:plus" />}
+                                        onClick={(event) => handleClickAdd(event, id)}
+                                        >
+                                        Add Module
+                                        </Button>
+                                   )}
+                                   &nbsp;
+                                   {isAddExam ? (
+                                        <Button variant="contained" onClick={goBack}>
+                                        Done
+                                        </Button>
+                                   ) : (
+                                        <Button
+                                        variant="contained"
+                                        startIcon={<Iconify icon="line-md:plus" />}
+                                        onClick={(event) => handleClickAddExam(event, id)}
+                                        >
+                                        Add Exam
+                                        </Button>
+                                   )}
+                                   </>
+                              )}
                          </Box>
                     </Box>
                </Box>

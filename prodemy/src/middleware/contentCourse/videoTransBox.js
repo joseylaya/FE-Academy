@@ -19,6 +19,7 @@ function VideoTranscriptBox({ transcript, videoRef }) {
 
           return () => {
                videoElement.removeEventListener('timeupdate', handleTimeUpdate);
+               
           };
      }, [videoRef, transcript]);
 

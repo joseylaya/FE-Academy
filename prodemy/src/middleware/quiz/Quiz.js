@@ -9,17 +9,41 @@ import examDataExport from './helpers/Questions';
 import Iconify from '../../components/iconify';
 
 
-function Quiz() {
+function Quiz({contentId}) {
+  const [moduleIndexId, setModuleIndexId] = useState(contentId);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [optionChosen, setOptionChosen] = useState("");
   const [Questions, setQuestions] = useState([]);
-  const { id, moduleId, examContent } = examDataExport([]);
+  // const { id, moduleId, examContent } = examDataExport([]);
+  const [examContent, setExamData] = useState([]);
+  
+  const { score, setScore, questionsLength, setQuestionsLength , setGameState, userName } = useContext(GameStateContext);
 
-  const { idey } = useParams();
+  useEffect(() => {
+  const fetchQuiz = async () => {
+    try {
+      const response = await Axios.get(`http://localhost:8000/fetchQuiz/${moduleIndexId}`);
+      const examData = response.data;
+      console.log(examData);
+      if (examData.length > 0) {
+        const dataExam = examData[0];
+        // console.log(dataExam)
+        setExamData( dataExam.examContent);
+      }
+    } catch (error) {
+      console.error('Error fetching exam data:', error);
+    }
 
-  const { score, setScore, gameState, setGameState } = useContext(
-    GameStateContext
-  );
+  };
+
+    if (moduleIndexId) {
+      fetchQuiz();
+    }
+  }, [moduleIndexId]);
+
+  
+
+
 
   const chooseOption = (option) => {
     setOptionChosen(option);
@@ -29,6 +53,7 @@ function Quiz() {
     if (Questions[currentQuestion].answerKey === optionChosen) {
       setScore(score + 1);
     }
+
     setCurrentQuestion(currentQuestion + 1);
   };
 
@@ -36,6 +61,7 @@ function Quiz() {
     if (Questions[currentQuestion].answerKey === optionChosen) {
       setScore(score + 1);
     }
+    setQuestionsLength(2);
     setGameState("finished");
   };
 
@@ -54,6 +80,7 @@ function Quiz() {
     const fetchData = async () => {
       try {
         const importData = examContent;
+        console.log(importData)
         if (importData && importData.length > 0) {
           const data = JSON.parse(importData);
           const cleanData = data.Questions;
@@ -68,32 +95,6 @@ function Quiz() {
 
     fetchData();
   }, [examContent]);
-
-
-
-
-  // const Questions = [
-  //   {
-  //     prompt: "In website anatomy, what do you call the section at the upper part of a website?",
-  //     optionA: "Banner section",
-  //     optionB: "Header section",
-  //     asnwer: "optionB",
-  //   },
-  //   {
-  //     prompt: "Which of this is not a programming language?",
-  //     optionA: "Python",
-  //     optionB: "JavaScript",
-  //     asnwer: "optionA",
-  //   },
-  //   {
-  //     prompt: "Which of this is not a javascript framework?",
-  //     optionA: "React",
-  //     optionB: "Angular",
-  //     asnwer: "optionB",
-  //   },
-  // ];
-
-
 
   return (
     <>
@@ -134,8 +135,5 @@ function Quiz() {
     </>
   );
 }
-
-
-
 
 export default Quiz;

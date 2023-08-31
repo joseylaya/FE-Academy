@@ -10,6 +10,10 @@ import QuizPage from '../../pages/quizPage';
 // import { use } from 'video.js/dist/types/tech/middleware';
 
 const Materials = () => {
+  
+  const { id } = useParams();
+  const storedUserId = sessionStorage.getItem('userId');
+
   const [currentTab, setCurrentTab] = useState(0);
   const [selectedLesson, setSelectedLesson] = useState(0);
   const [checkedItems, setCheckedItems] = useState([]);
@@ -22,10 +26,42 @@ const Materials = () => {
   const [increment, setIncrement] = useState(1);
   const [isModule, setIsModule] = useState('');
   const [moduleDesc, setModuleDesc] = useState('');
-  
+  const [contentId, setContentId] = useState('');
+  const [currentModuleId, setCurrentModuleId] = useState('');
+  const [firstDataEnter, setFirstDataEnter] = useState([]);
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-  
-  const { id } = useParams();
+  const [prevMod, setPrevMod] = useState([]);
+  const [prevLes, setPrevLes] = useState([]);
+
+  useEffect(() => {
+    const fetchCurrentIndex = async () => {
+      try {
+        if(storedUserId.length > 0 ){
+          Axios
+          .post('http://localhost:8000/fetchCurrentMod', {
+            idey: id,
+            userId: storedUserId
+          })
+          
+          .then((response) => {
+               if(response){
+               const data = response.data[0];
+               setPrevMod(data.module_content_index)
+               setPrevLes(data.module_lesson_index)
+               }
+          })
+    
+          .catch((error) => {
+            console.error(error);
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching content data:', error);
+      }
+    };
+
+    fetchCurrentIndex();
+  }, [id]);
 
   const videoContainerRef = useRef(null);
 
@@ -41,7 +77,7 @@ const Materials = () => {
         videoContainer.style.zIndex = '9999';
         // videoContainer.style.height = '100vh';
       } else {
-        videoContainer.style.width = 'auto';
+        videoContainer.style.width = 'auto'; 
         videoContainer.style.position = 'static';
         videoContainer.style.zIndex = '1';
       }
@@ -64,13 +100,11 @@ const Materials = () => {
     const checkForVideoElement = () => {
       try {
         const videoElement = videoContainerRef.current.querySelector('video');
-        console.log(videoElement);
         if (videoElement) {
           const videoDuration = Math.floor(videoElement.duration / 2);
           // const vidTime = `${videoDuration}000`;
-          const vidTime = 10000;
+          const vidTime = 100;
 
-          console.log(vidTime);
           setTimeout(() => {
             setIsVideoPlaying(false);
           }, vidTime);
@@ -84,18 +118,17 @@ const Materials = () => {
 
     checkForVideoElement();
   }, []);
-  
 
   const videoTimeElement = () => {
     try {
       const videoElement = videoContainerRef.current.querySelector('video');
-      console.log(videoElement);
+      // console.log(videoElement);
       if (videoElement) {
         const videoDuration = Math.floor(videoElement.duration / 2);
         // const vidTime = `${videoDuration}000`;
         const vidTime = 10000;
 
-        console.log(vidTime);
+        // console.log(vidTime);
         setTimeout(() => {
           setIsVideoPlaying(false);
         }, vidTime);
@@ -115,20 +148,37 @@ const Materials = () => {
         const response = await Axios.get(`http://localhost:8000/content/${id}`);
         const content = response.data.moduleContent;
         const course  = response.data.courseData;
-
-        if (content.length > 0) {
+        const previousModule = prevMod;
+        const previousLesson = prevLes;
+        if (course.length > 0) {
+          setCurrentModuleId(course.id)
           setCourseIsData(course)
           setGetNextMod(content)
-           // Fetch and store data for all modules
-          const decodedData = JSON.parse(content[0].content);
-          const decodedLessonAbout = decodedData;
 
+          setContentId(content[previousModule].content_id)
+           // Fetch and store data for all modules
+          const decodedData = JSON.parse(content[previousModule].content);
+          const decodedLessonAbout = decodedData;
+          setCurrentTab(previousLesson);
+          setSelectedLesson(previousLesson);
+       
+          setCheckedItems((prevChecked) => {
+            const newChecked = [...prevChecked];
+          
+            // Check if currentTab is not already in the array
+            if (!newChecked.includes(currentTab)) {
+              newChecked.push(currentTab);
+            }
+          
+            // Remove previousLesson from the array
+            const filteredChecked = newChecked.filter((index) => index !== previousLesson);
+          
+            return filteredChecked;
+          }); 
+          setFirstDataEnter(decodedLessonAbout)
           setIsModule(decodedLessonAbout.module)
           setModuleDesc(decodedLessonAbout.moduleDesc)
           setContentData(decodedLessonAbout.lessonAbout);
-      
-          setModuleIsData(content[0])
-          
         } else {
           console.log('No data found');
           setIsLoading(false);
@@ -139,59 +189,139 @@ const Materials = () => {
     };
 
     fetchContentData();
-  }, [id]);
-
-  const getNextModule = async (event, getNextMod) => {
-
-    try {
-      await setIncrement(prevIncrement => prevIncrement + 1);
-  
-      const decodedData = JSON.parse(getNextMod[increment].content);
-  
+  }, [prevMod]);
+  const getNextModule =  (event, getNextMod, increment) => {
+      setIncrement(prevIncrement => prevIncrement + 1);
+      const parsedData = getNextMod[increment].content;
+      const decodedData = JSON.parse(parsedData);
       const decodedLessonAbout = decodedData;
-      setIsModule(decodedLessonAbout.module)
-      setContentData(decodedLessonAbout.lessonAbout);
-      setCurrentTab(0);
-      setSelectedLesson(0);
-      setIsQuiz(false);
-      setCheckedItems([]);
-      setIsVideoPlaying(true);
-    } catch (error) {
-      console.error('An error occurred:', error);
+      
+      try {
+        if(storedUserId.length > 0 ){
+          Axios
+          .post('http://localhost:8000/putCurrentMod', {
+            idey: id,
+            userId: storedUserId,
+            tabindex: 0,
+            contId: increment
+          })
+          
+          .then((response) => {
+               if(response){
+              
 
-    } 
+                setContentId(getNextMod[increment].content_id)
+                setIsModule(decodedLessonAbout.module)
+                setContentData(decodedLessonAbout.lessonAbout);
+                setFirstDataEnter(decodedLessonAbout)
+                setCurrentTab(0);
+                setSelectedLesson(0)
+                setIsQuiz(false);
+                setCheckedItems([]);
+                setIsVideoPlaying(false);
+                if (currentTab < contentData.length - 1) {
+                  const nextTab = currentTab + 1;
+                  setCurrentTab(nextTab);
+                  setSelectedLesson(nextTab);
+                } 
+              }
+          })
+    
+          .catch((error) => {
+            console.error(error);
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching content data:', error);
+      }
+
+
+  };
+  
+  const getNextTab = (event, courseIsData, prevMod) => {
+    if (currentTab < contentData.length - 1) {
+      const nextTab = currentTab + 1;
+      try {
+        if(storedUserId.length > 0 ){
+          Axios
+          .post('http://localhost:8000/putCurrentMod', {
+            idey: id,
+            userId: storedUserId,
+            tabindex: nextTab,
+            contId: prevMod
+          })
+          
+          .then((response) => {
+               if(response){
+                setCurrentTab(nextTab);
+                setSelectedLesson(nextTab);
+                setIsVideoPlaying(true);
+                videoTimeElement();
+          
+                setCheckedItems((prevChecked) => {
+                  const newChecked = [...prevChecked];
+                  if (!newChecked.includes(currentTab)) {
+                    newChecked.push(currentTab);
+                  }
+                  return newChecked.filter((index) => index !== nextTab);
+                });
+              } else {
+                setCurrentTab(contentData.length - 1);
+                setCheckedItems((prevChecked) => {
+                  const newChecked = [...prevChecked];
+                  if (!newChecked.includes(currentTab)) {
+                    newChecked.push(currentTab);
+                  }
+                  return newChecked;
+                });
+          
+                setIsQuiz(true)
+                setCurrentTab(100)
+                videoTimeElement()
+               }
+          })
+    
+          .catch((error) => {
+            console.error(error);
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching content data:', error);
+      }
+    }
   };
   
   
-  const getNextTab = () => {
-
+  const startQuiz = (event, courseIsData, prevMod) => {
     if (currentTab < contentData.length - 1) {
-      const nextTab = currentTab + 1;
-      setCurrentTab(nextTab);
-      setSelectedLesson(nextTab);
-      setIsVideoPlaying(true);
-      videoTimeElement();
-      setCheckedItems((prevChecked) => {
-        const newChecked = [...prevChecked];
-        if (!newChecked.includes(currentTab)) {
-          newChecked.push(currentTab);
-        }
-        return newChecked.filter((index) => index !== nextTab);
-      });
-    } else {
-      setCurrentTab(contentData.length - 1);
-      setCheckedItems((prevChecked) => {
-        const newChecked = [...prevChecked];
-        if (!newChecked.includes(currentTab)) {
-          newChecked.push(currentTab);
-        }
-        return newChecked;
-      });
+       const nextTab = currentTab + 1;
+        setCurrentTab(nextTab);
+        setSelectedLesson(nextTab);
+        setIsVideoPlaying(true);
+        videoTimeElement();
+  
+        setCheckedItems((prevChecked) => {
+          const newChecked = [...prevChecked];
+          if (!newChecked.includes(currentTab)) {
+            newChecked.push(currentTab);
+          }
+          return newChecked.filter((index) => index !== nextTab);
+        });
+      } else {
+        setCurrentTab(contentData.length - 1);
+        setCheckedItems((prevChecked) => {
+          const newChecked = [...prevChecked];
+          if (!newChecked.includes(currentTab)) {
+            newChecked.push(currentTab);
+          }
+          return newChecked;
+        });
+  
         setIsQuiz(true)
         setCurrentTab(100)
         videoTimeElement()
+        }
     }
-  };
 
   const StyledContent = styled('div')(({ theme }) => ({
     maxWidth: 480,
@@ -237,7 +367,7 @@ const Materials = () => {
             <Grid item xs={12} md={6} lg={8} ref={videoContainerRef} sx={{ height: '100vh' }}>
               <Card sx={{ mb: 2 }}>
                 <Box sx={{ p: 3 }}>
-                {isQuiz ? <QuizPage /> :  <VideoComponent videoSrc={contentData[selectedLesson].videoSrc} transcript={contentData[selectedLesson].transcript} />}
+                {isQuiz ? <QuizPage id = { contentId } /> :  <VideoComponent videoSrc={contentData[selectedLesson].videoSrc} transcript={contentData[selectedLesson].transcript} />}
                 </Box>
               </Card>
             </Grid>
@@ -254,7 +384,7 @@ const Materials = () => {
 
                   <List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     <Box>
-
+             
                       {contentData.map((lesson, lessonIndex) => (
                         <ListItem key={`lesson-${lessonIndex}`} disablePadding disabled={currentTab !== lessonIndex}
                         sx={{ backgroundColor: currentTab === lessonIndex ? '#3333330F' : 'initial', color: currentTab === lessonIndex ? 'black' : 'initial', borderRight: currentTab === lessonIndex ? '7px solid #9900d1ab' : 'none', }}
@@ -275,23 +405,25 @@ const Materials = () => {
                   </List>
                 </Box>
               </Card>
-              {currentTab === contentData.length - 1 ? (
-             <Button variant="contained" color="primary" onClick={getNextTab} sx={{ mt: 2 }} disabled={isVideoPlaying}>
-              Start quiz
+              {currentTab === contentData.length - 1 ? firstDataEnter.hasExam === "true" ? 
+              <Button variant="contained" color="primary" onClick={(event) => startQuiz(event, courseIsData, prevMod)} sx={{ mt: 2 }} disabled={isVideoPlaying}>
+                Start quiz </Button> 
+              : <Button variant="contained" color="primary" onClick={(event) => getNextModule(event, getNextMod, increment)} sx={{ mt: 2 }} >
+                Next module
               </Button>
-            ) : currentTab === 100 ?
-              <Button variant="contained" color="primary" onClick={(event) => getNextModule(event, getNextMod)} sx={{ mt: 2 }} >
+              : currentTab === 100 ?
+              <Button variant="contained" color="primary" onClick={(event) => getNextModule(event, getNextMod, increment )} sx={{ mt: 2 }} >
                 Next module
               </Button>
               : (
-              <Button variant="contained" color="primary" onClick={getNextTab} sx={{ mt: 2 }} disabled={isVideoPlaying}>
+              <Button variant="contained" color="primary" onClick={(event) => getNextTab(event, courseIsData, prevMod)} sx={{ mt: 2 }} disabled={isVideoPlaying}>
                 Next
               </Button>
               )} 
             </Grid>
           </Grid>
         </>
-      ) : (
+       ) : (
         <StyledContent sx={{ textAlign: 'center', alignItems: 'center' }}>
           <Typography variant="h3" paragraph>
             Sorry for the Inconvenience!

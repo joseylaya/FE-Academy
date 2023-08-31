@@ -26,7 +26,6 @@ export default function Questions() {
 
     if (id) {
       fetchUserData();
-      // console.log(storedUserId);
     }
   }, [id]);
 

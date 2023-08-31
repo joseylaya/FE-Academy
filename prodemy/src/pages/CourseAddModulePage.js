@@ -11,10 +11,12 @@ export function CourseAddModulePage() {
 
   const [endPoint, setEndPoint] = useState('');
 
-  const [moduleTitle, setModuleTitle] = useState('About Proweaver');
+  const [modulename, setModulename] = useState('module name placeholder');
+  const [moduleDesc, setModuleDesc] = useState('module description placeholder');
+  const [moduleTitle, setModuleTitle] = useState('lesson name placeholder');
+  const [countIndex, setCountIndex] = useState(0);
   
   const [videoUrl, setVideoUrl] = useState('https://www.youtube.com/watch?v=XeiOnkEI7XI');
-  const [contentId, setContentId] = useState('');
 const [transcriptDataArray, setTranscriptDataArray] = useState([]);
 
 // ... (existing imports)
@@ -33,10 +35,11 @@ const [transcriptDataArray, setTranscriptDataArray] = useState([]);
     };
 
  const pushtodata = () => {
+  setCountIndex(prevCount => prevCount + 1);
+
   const newTranscriptData = {
     lessonOverview: moduleTitle,
     videoSrc: videoUrl,
-    moduleContentId: contentId,
     transcript: transcriptContainers.map((transcriptData) => ({
       startTime: Number(transcriptData.startPoint),
       endTime: Number(transcriptData.endPoint),
@@ -46,12 +49,14 @@ const [transcriptDataArray, setTranscriptDataArray] = useState([]);
 
   const updatedTranscriptDataArray = [...transcriptDataArray, newTranscriptData];
   setTranscriptDataArray(updatedTranscriptDataArray);
-  console.log(updatedTranscriptDataArray);
+  // console.log(updatedTranscriptDataArray);
 };
 
   // Function to generate the JSON data format
 const generateJsonData = () => {
     const jsonData = {
+      module: modulename,
+      moduleDesc,
       lessonAbout: transcriptDataArray,
     };
 
@@ -142,19 +147,37 @@ const generateJsonData = () => {
             <Grid item xs={12} md={4} lg={3}>
             <Card sx={{ mt: 2 }}>
                  <Box sx={{ pb: 1 }} dir="ltr">
+                 <Typography variant="h6" component="h1" sx={{ padding: '10px', justifyContent: 'center', display: 'flex' }}>
+                    Module index
+                  </Typography>
                   <Typography variant="h6" component="h1" sx={{ padding: '10px', justifyContent: 'center', display: 'flex' }}>
-                    Course Overview
+                   {countIndex}
+                  </Typography>
+               
+
+                  <Typography variant="h6" component="h1" sx={{ padding: '10px', justifyContent: 'center', display: 'flex' }}>
+                    Module Overview
                   </Typography>
 
                   <Box className="item flexSB" sx={{ marginTop: '10px !important', padding: '5px 20px !important' }}>
                     <Box className="text">
-                      <TextField  onChange={(e) => setContentId(e.target.value)} rows={1} id="outlined-basic" label="index number" variant="outlined" sx={{width: '100%'}} />
+                      <TextField  onChange={(e) => setModulename(e.target.value)} rows={1} id="outlined-basic" label="Module Name" variant="outlined" sx={{width: '100%'}} />
                     </Box>
                   </Box>
 
                   <Box className="item flexSB" sx={{ marginTop: '10px !important', padding: '5px 20px !important' }}>
                     <Box className="text">
-                      <TextField  onChange={(e) => setModuleTitle(e.target.value)} rows={1} id="outlined-basic" label="Module Title" variant="outlined" sx={{width: '100%'}} />
+                      <TextField  onChange={(e) => setModuleDesc(e.target.value)} rows={1} id="outlined-basic" label="Module Description" variant="outlined" sx={{width: '100%'}} />
+                    </Box>
+                  </Box>
+
+                  <Typography variant="h6" component="h1" sx={{ padding: '10px', justifyContent: 'center', display: 'flex' }}>
+                    Lesson Overview
+                  </Typography>
+
+                  <Box className="item flexSB" sx={{ marginTop: '10px !important', padding: '5px 20px !important' }}>
+                    <Box className="text">
+                      <TextField  onChange={(e) => setModuleTitle(e.target.value)} rows={1} id="outlined-basic" label="Lesson Name" variant="outlined" sx={{width: '100%'}} />
                     </Box>
                   </Box>
                     
@@ -168,7 +191,7 @@ const generateJsonData = () => {
               </Grid>
            </Grid>
 
-          <Button variant="contained" endIcon={<Iconify icon="line-md:chevron-small-right" />} onClick={handleAddNewTranscript}>
+          <Button variant="contained"  onClick={handleAddNewTranscript}>
               add new transcript
             </Button>
             &nbsp;
@@ -177,7 +200,7 @@ const generateJsonData = () => {
             </Button>
             &nbsp;
             <Button variant="contained" color="primary" onClick={generateJsonData}>
-              Generate JSON Data
+             Upload to Cloud
             </Button>
         </Container>
       </>

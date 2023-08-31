@@ -6,10 +6,13 @@ import EndScreen from "../middleware/quiz/EndScreen";
 
 import { GameStateContext } from "../middleware/quiz/helpers/Contexts";
 // ['menu', 'playing', 'finished']
-function QuizPage() {
+
+function QuizPage({id}) {
   const [gameState, setGameState] = useState("playing");
   const [userName, setUserName] = useState("");
+  const [questionsLength, setQuestionsLength] = useState(0);
   const [score, setScore] = useState(0);
+  const [idey, setIdey] = useState(id)
 
   return (
     <div className="App">
@@ -17,6 +20,8 @@ function QuizPage() {
         value={{
           gameState,
           setGameState,
+          questionsLength,
+          setQuestionsLength,
           userName,
           setUserName,
           score,
@@ -24,8 +29,8 @@ function QuizPage() {
         }}
       >
         {gameState === "menu" && <Menu />}
-        {gameState === "playing" && <Quiz />}
-        {gameState === "finished" && <EndScreen />}
+        {gameState === "playing" && <Quiz contentId = {idey} />}
+        {gameState === "finished" && <EndScreen contentId = {idey} />}
       </GameStateContext.Provider>
     </div>
   );
